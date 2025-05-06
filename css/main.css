@@ -1,12 +1,48 @@
 header .project-logo {
     display: flex;
     align-items: center;
+    padding: var(--regular-padding);
+    box-sizing: border-box;
 }
 
 header .project-logo img {
-    width: 50px;
+    width: 2.5rem;
+    filter: brightness(0) saturate(100%) invert(97%) sepia(81%) saturate(2677%) hue-rotate(282deg) brightness(101%) contrast(111%);
+    margin-right: 0.2rem;
 }
 
 .project-title {
     font-size: 1.1rem;
+    color: var(--pastel-pink);
+    text-transform: uppercase;
 }
+
+.grey {
+    color: var(--grey-clr);
+}
+
+.header-nav ul {
+    padding-right: 2rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-nav ul li {
+    font-size: 0.8rem;
+    font-variation-settings: var(--regular-fvs);
+    box-sizing: border-box;
+    padding: var(--regular-padding);
+    border-radius: 0.5rem;
+    background-color: var(--pastel-pink);
+}
+
+.header-nav ul a {
+    text-decoration: none;
+    color: var(--dgrey-clr);
+}
+
+.header-nav ul a:hover li {
+    transition: all ease-in-out 0.25s;
+    background-color: var(--lgrey-clr);
+}
+
