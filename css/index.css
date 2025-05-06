@@ -1,0 +1,111 @@
+:root {
+    /* Define my variables */
+    --main-color: #E663DF;
+    --white-clr: #EDEADE;
+    --shade-white-clr: #E4E1D3;
+    --txt-gray-clr: #525252;
+
+    font-family: 'Roboto';
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto.woff2') format('woff2');
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white-clr);
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-areas:
+        "nav main"
+        "nav main"
+        "footer footer"
+    ;
+    grid-auto-columns: 1fr 3fr;
+    grid-auto-rows: min-content;
+}
+
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    background-color: var(--txt-gray-clr);
+    height: calc(100vh - 50px);
+    align-items: start;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    height: 50px;
+}
+
+/* NAV CSS */
+nav .left-header-container {
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+nav .left-header-container div img {
+    width: 5rem;
+    filter: brightness(0) saturate(100%) invert(60%) sepia(37%) saturate(3526%) hue-rotate(273deg) brightness(96%) contrast(86%);
+    margin-right: 1rem;
+}
+
+nav .left-header-container p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.9rem;
+    font-variation-settings: "wght" 900, "wdth" 100;
+    letter-spacing: 0.3rem;
+    color: var(--main-color);
+}
+
+nav .right-nav-container {
+    margin-top: 2rem;
+}
+
+nav .right-nav-container img {
+    width: 30px;
+    margin-right: 1rem;
+}
+
+nav .right-nav-container a {
+    color: var(--txt-gray-clr);
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: var(--main-color);
+    background-color: var(--shade-white-clr);
+    color: black;
+}
+
+nav .right-nav-container a:hover {
+    background-color: var(--main-color);
+}
