@@ -58,6 +58,7 @@ form input:not([type="checkbox"]) {
     outline: none;
     border: 1px solid var(--dgrey-clr);
     border-radius: 0.5rem;
+    color: var(--dgrey-clr);
 }
 
 .check-control {
@@ -68,8 +69,8 @@ form input:not([type="checkbox"]) {
 }
 
 .check-control input[type="checkbox"] {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: var(--dgrey-clr);
     accent-color: var(--dgrey-clr);
 }
@@ -80,5 +81,31 @@ form input:not([type="checkbox"]) {
     border-radius: 0.5rem;
     outline: none;
     border: none;
+    background-color: var(--dgrey-clr);
+    color: var(--pastel-pink);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.modal button:hover {
     background-color: var(--lgrey-clr);
+    color: var(--dgrey-clr);
+    transition: all ease-in-out 0.3s;
+}
+
+.modal form p:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.modal form p:last-child a {
+    margin-left: 1rem;
+    text-decoration: none;
+    padding: 0.9rem 1rem;
+}
+
+.modal form p:last-child a:hover {
+    background-color: var(--dgrey-clr);
+    color: var(--pastel-pink);
+    transition: all ease-in-out 0.3s;
+    border-radius: 0.5rem;
 }
