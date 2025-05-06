@@ -56,11 +56,11 @@ form {
     text-transform: uppercase;
 }
 
-.form>* {
+form>* {
     width: 100%;
 }
 
-.form input:not([type="checkbox"]) {
+form input:not([type="checkbox"]) {
     width: 100%;
     margin: 0.5rem 0;
     box-sizing: border-box;
@@ -97,23 +97,39 @@ form {
     text-transform: uppercase;
 }
 
-.modal button:hover {
+.modal button:first-of-type:hover {
     background-color: var(--lgrey-clr);
     color: var(--dgrey-clr);
     transition: all ease-in-out 0.3s;
 }
 
-.modal .form p:last-child {
+.modal button:last-of-type {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding: 1rem 1rem;
+    font-style: italic;
+}
+
+.modal button:last-of-type:hover {
+    color: var(--dgrey-clr);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal form p:last-child {
     margin-bottom: 1.5rem;
 }
 
-.modal .form p:last-child a {
+.modal form p:last-child a {
     margin-left: 1rem;
     text-decoration: none;
     padding: 0.9rem 1rem;
 }
 
-.modal .form p:last-child a:hover {
+.modal form p:last-child a:hover {
     background-color: var(--dgrey-clr);
     color: var(--pastel-pink);
     transition: all ease-in-out 0.3s;

@@ -44,8 +44,8 @@
             <p>Add book information</p>
             <span class="close-x">x</span>
 
-            <div class="form">
-                <label for="book-title">
+            <form onsubmit="event.preventDefault();">
+                <label for=" book-title">
                     <p>Title</p>
                     <input type="text" name="book-title" id="book-title" required>
                 </label>
@@ -63,9 +63,9 @@
                 <p>
                     <button type="submit" id="add-book-button">Add Book</button>
                     <!-- <span id="close-x-link"><a href="">Close this box</a></span> -->
-                    <button type="button" id="clear-fields">Clear all fields</button>
+                    <button type="reset" id="clear-fields">Reset fields</button>
                 </p>
-            </div>
+            </form>
 
         </div>
         <div class="notice">Click anywhere the screen to close</div>

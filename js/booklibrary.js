@@ -13,42 +13,32 @@ function createBookEntry() {
 
     isReadStatus = (isReadStatus.checked) ? true : false;
 
-    const newBookEntry = new Book(bookTitle, bookAuthor, bookPages, isReadStatus);
+    // Initialize book
+    const newBookEntry = new Book(bookTitle, bookAuthor, parseInt(bookPages), isReadStatus);
 
-    saveBookEntry(newBookEntry.getBookData());
-    console.log(bookLibrary);
+    newBookEntry.addBookToLibrary(); // create the book and save to the array
+    console.table(bookLibrary);
     closeModal();
 }
 
 // create the book construction
-function Book(title, author, pages, readStatus = Boolean) {
+function Book(title, author, pages, readStatus) {
     if (!new.target) { throw Error("You should use NEW in creating Book object"); }
     const bookid = '';
 
-    this.bookid = crypto.randomUUID();
+    this.bookid = crypto.randomUUID(); // generate a unique id for the book
     this.title = title;
     this.author = author;
     this.pages = typeof pages === 'number' ? pages : 0;
     this.readStatus = typeof readStatus === 'boolean' ? readStatus : false;
-
-    this.getBookData = function () {
-        return `${this.bookid} , ${this.title}, ${this.author}, ${this.pages}, ${this.readStatus}`;
-    }
 }
 
-function saveBookEntry(obj) {
-    const [bookid, title, author, pages, readStatus] = obj.split(',');
+Book.prototype.addBookToLibrary = function () {
     bookLibrary.push({
-        bookid: bookid,
-        title: title,
-        author: author,
-        pages: parseInt(pages),
-        readStatus: readStatus
+        bookid: this.bookid,
+        title: this.title,
+        author: this.author,
+        pages: parseInt(this.pages),
+        readStatus: this.readStatus
     });
 }
-
-/* const newBook = new Book("Sample Title", "Aldin Moreno", 250, true);
-const book2 = new Book("Test Sample 2", "Zeke Moreno", 100, false);
-
-addBookToLibrary(newBook.getBookData());
-addBookToLibrary(book2.getBookData());*/
