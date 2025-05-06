@@ -36,23 +36,15 @@ header .project-logo img {
     box-sizing: border-box;
 }
 
-/* .header-nav ul li {
-    font-size: 0.8rem;
-    font-variation-settings: var(--regular-fvs);
-    box-sizing: border-box;
-    padding: var(--regular-padding);
-    border-radius: 0.5rem;
-    background-color: var(--pastel-pink);
-} */
-
 .header-nav button {
     font-size: 0.8rem;
-    font-variation-settings: var(--regular-fvs);
+    font-weight: 500;
     box-sizing: border-box;
-    padding: var(--regular-padding);
+    padding: var(--buttonh-padding);
     border-radius: 0.5rem;
     border: none;
     background-color: var(--pastel-pink);
+    color: var(--dgrey-clr);
 }
 
 .header-nav button:hover {
@@ -64,8 +56,3 @@ header .project-logo img {
     text-decoration: none;
     color: var(--dgrey-clr);
 }
-
-/* .header-nav ul a:hover li {
-    transition: all ease-in-out 0.25s;
-    background-color: var(--lgrey-clr);
-} */
