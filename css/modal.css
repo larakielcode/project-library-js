@@ -1,6 +1,7 @@
 .modal {
+    display: none;
     height: fit-content;
-    position: absolute;
+    position: fixed;
     top: 0;
     left:0;
     width: 100%;
@@ -116,4 +117,11 @@ form input:not([type="checkbox"]) {
     color: var(--pastel-pink);
     transition: all ease-in-out 0.3s;
     border-radius: 0.5rem;
+}
+
+.modal .notice {
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--lgrey-clr);
 }
