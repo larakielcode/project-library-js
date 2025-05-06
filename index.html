@@ -15,11 +15,12 @@
 
     <!-- Start the layout -->
     <div class="wrapper">
-        
+
         <header>
             <div class="project-logo">
                 <a href="#"><img src="images/book-logo2.svg" alt=""></a>
-                <p class="project-title"><a href="#"><span class="grey">Larakielcode</span> <strong><span class="pastelpink">Library</span></strong></a></p>
+                <p class="project-title"><a href="#"><span class="grey">Larakielcode</span> <strong><span
+                                class="pastelpink">Library</span></strong></a></p>
             </div>
             <div class="header-nav">
                 <ul>
@@ -41,29 +42,31 @@
     </div>
 
     <div class="modal">
-        <p>Add book information</p>
-        <span class="close-x">x</span>
-        <form action="#">
-           <label for="book-title">
-            <p>Title</p>
-            <input type="text" name="book-title" id="book-title">
-           </label>
-           <label for="book-author">
-            <p>Author</p>
-            <input type="text" name="book-author" id="book-author">
-           </label>
-           <label for="book-year">
-            <p>Year</p>
-            <input type="number" name="book-year" id="book-year" min="1500" max="9999">
-           </label>
-           <label class="check-control" for="book-read">
-            <input type="checkbox" name="book-read" id="book-read"> I've already read it
-           </label>
-           <p>
-            <button type="button">Add Book</button>
-            <a href="">Close this box</a>
-           </p>
-        </form>
+        <div class="modal-content">
+            <p>Add book information</p>
+            <span class="close-x">x</span>
+            <form action="#">
+                <label for="book-title">
+                    <p>Title</p>
+                    <input type="text" name="book-title" id="book-title">
+                </label>
+                <label for="book-author">
+                    <p>Author</p>
+                    <input type="text" name="book-author" id="book-author">
+                </label>
+                <label for="book-year">
+                    <p>Year</p>
+                    <input type="number" name="book-year" id="book-year" min="1500" max="9999">
+                </label>
+                <label class="check-control" for="book-read">
+                    <input type="checkbox" name="book-read" id="book-read"> I've already read it
+                </label>
+                <p>
+                    <button type="button">Add Book</button>
+                    <a href="">Close this box</a>
+                </p>
+            </form>
+        </div>
     </div>
 
     <script src="js/booklibrary.js"></script>
