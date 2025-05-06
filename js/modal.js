@@ -7,16 +7,18 @@ closebtn.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
-closebtnlink.onclick = function () {
-    modal.style.display = 'none';
-}
+closebtnlink.onclick = closeModal();
 
-addbtn.onclick = function() {
+addbtn.onclick = function () {
     modal.style.display = "block";
 }
 
-window.onclick = function(e) {
+window.onclick = function (e) {
     if (e.target == modal) {
         modal.style.display = "none";
     }
+}
+
+function closeModal() {
+    modal.style.display = 'none';
 }

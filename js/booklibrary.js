@@ -8,12 +8,17 @@ function createBookEntry() {
 
     const bookTitle = document.querySelector('#book-title').value;
     const bookAuthor = document.querySelector('#book-author').value;
-    const bookYear = document.querySelector('#book-year').value;
+    const bookPages = document.querySelector('#book-pages').value;
     let isReadStatus = document.querySelector('#book-read');
 
     isReadStatus = (isReadStatus.checked) ? true : false;
 
-    const newBookEntry = new Book(bookTitle, bookAuthor,);
+    const newBookEntry = new Book(bookTitle, bookAuthor, bookPages, isReadStatus);
+    saveBookEntry(newBookEntry.getBookData());
+
+    console.log(bookLibrary);
+    //alert(`Book has been added ${bookTitle}`);
+    closeModal();
 }
 
 // create the book construction
@@ -32,7 +37,7 @@ function Book(title, author, pages, readStatus = Boolean) {
     }
 }
 
-function addBookToLibrary(obj) {
+function saveBookEntry(obj) {
     const [bookid, title, author, pages, readStatus] = obj.split(',');
     bookLibrary.push({
         bookid: bookid,
@@ -43,9 +48,8 @@ function addBookToLibrary(obj) {
     });
 }
 
-const newBook = new Book("Sample Title", "Aldin Moreno", 250, true);
+/* const newBook = new Book("Sample Title", "Aldin Moreno", 250, true);
 const book2 = new Book("Test Sample 2", "Zeke Moreno", 100, false);
 
 addBookToLibrary(newBook.getBookData());
-addBookToLibrary(book2.getBookData());
-console.log(bookLibrary);
+addBookToLibrary(book2.getBookData());*/

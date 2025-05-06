@@ -3,14 +3,15 @@
     height: fit-content;
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
     margin-inline: auto;
     margin-block: auto;
     z-index: 1;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black w/ opacity */
 }
 
 .modal-content {
@@ -39,11 +40,11 @@
     font-variation-settings: var(--bold-fvs);
     color: #cfcfcf;
     display: block;
-    background-color:var(--lgrey-clr);
+    background-color: var(--lgrey-clr);
     padding: 0.2rem 0.5rem;
     border-radius: 50%;
     cursor: pointer;
-    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .3), 0px -1px 0px rgba(0, 0, 0, .7);
 }
 
 form {
@@ -55,7 +56,7 @@ form {
     text-transform: uppercase;
 }
 
-form > * {
+form>* {
     width: 100%;
 }
 
