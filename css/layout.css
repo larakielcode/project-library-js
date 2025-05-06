@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+        "head head"
+        "nav content"
+        "foot foot"
+    ;
+    grid-template-columns: 300px 1fr;
+}
+
+header {
+    grid-area: head;
+    background-color: pink;
+    box-sizing: border-box;
+}
+
+nav {
+    grid-area: nav;
+    background-color: yellow;
+}
+
+main {
+    grid-area: content;
+    background-color: aqua;
+}
+
+footer {
+    grid-area: foot;
+    background-color: blueviolet;
+}

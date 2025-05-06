@@ -1,0 +1,28 @@
+:root {
+    font-family: 'Inter';
+
+    /* declare personal vars */
+    --regular-fvs: "opsz" 20, "wght" 300;
+    --bold-fvs: "opsz" 20, "wght" 700;
+    --pastel-pink: #FFC5D3;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter.woff2') format('woff2');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-variation-settings: var(--regular-fvs);
+}
+
+p, div {
+    padding: 0;
+    margin: 0;
+}
+
+strong {
+    font-variation-settings: var(--bold-fvs);
+}

@@ -1,0 +1,12 @@
+header .project-logo {
+    display: flex;
+    align-items: center;
+}
+
+header .project-logo img {
+    width: 50px;
+}
+
+.project-title {
+    font-size: 1.1rem;
+}
