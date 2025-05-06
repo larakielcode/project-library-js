@@ -43,27 +43,30 @@
         <div class="modal-content">
             <p>Add book information</p>
             <span class="close-x">x</span>
-            <form action="#">
+
+            <div class="form">
                 <label for="book-title">
                     <p>Title</p>
-                    <input type="text" name="book-title" id="book-title">
+                    <input type="text" name="book-title" id="book-title" required>
                 </label>
                 <label for="book-author">
                     <p>Author</p>
-                    <input type="text" name="book-author" id="book-author">
+                    <input type="text" name="book-author" id="book-author" required>
                 </label>
                 <label for="book-pages">
                     <p>Pages</p>
-                    <input type="number" name="book-pages" id="book-pages" min="1" max="99999999">
+                    <input type="number" name="book-pages" id="book-pages" min="1" max="99999999" required>
                 </label>
                 <label class="check-control" for="book-read">
                     <input type="checkbox" name="book-read" id="book-read"> I've already read it
                 </label>
                 <p>
-                    <button type="button" id="add-book-button">Add Book</button>
-                    <span id="close-x-link"><a href="">Close this box</a></span>
+                    <button type="submit" id="add-book-button">Add Book</button>
+                    <!-- <span id="close-x-link"><a href="">Close this box</a></span> -->
+                    <button type="button" id="clear-fields">Clear all fields</button>
                 </p>
-            </form>
+            </div>
+
         </div>
         <div class="notice">Click anywhere the screen to close</div>
     </div>

@@ -14,10 +14,9 @@ function createBookEntry() {
     isReadStatus = (isReadStatus.checked) ? true : false;
 
     const newBookEntry = new Book(bookTitle, bookAuthor, bookPages, isReadStatus);
-    saveBookEntry(newBookEntry.getBookData());
 
+    saveBookEntry(newBookEntry.getBookData());
     console.log(bookLibrary);
-    //alert(`Book has been added ${bookTitle}`);
     closeModal();
 }
 
