@@ -1,0 +1,84 @@
+.modal {
+    width: 350px;
+    height: fit-content;
+    background-color: var(--pastel-pink);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin-inline: auto;
+    margin-block: auto;
+    border-radius: 1rem;
+    padding: var(--regular-padding);
+    color: var(--dgrey-clr);
+}
+
+.modal>p {
+    text-align: center;
+    margin: 2.5rem 0 1rem 0;
+    font-size: 1.2rem;
+    color: var(--dgrey-clr);
+    font-variation-settings: var(--bold-fvs);
+}
+
+.close-x {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem 0.5rem 0 0;
+    font-variation-settings: var(--bold-fvs);
+    color: #cfcfcf;
+    display: block;
+    background-color:var(--lgrey-clr);
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
+}
+
+form {
+    font-size: 0.8rem;
+    font-variation-settings: var(--modal-form-fvs);
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+form > * {
+    width: 100%;
+}
+
+form input:not([type="checkbox"]) {
+    width: 100%;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+    outline: none;
+    border: 1px solid var(--dgrey-clr);
+    border-radius: 0.5rem;
+}
+
+.check-control {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    align-items: center;
+}
+
+.check-control input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--dgrey-clr);
+    accent-color: var(--dgrey-clr);
+}
+
+.modal button {
+    margin-top: 1rem;
+    padding: var(--button-padding);
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    background-color: var(--lgrey-clr);
+}

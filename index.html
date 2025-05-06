@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Project : Library | Larakielcode</title>
 </head>
 
@@ -17,8 +18,8 @@
         
         <header>
             <div class="project-logo">
-                <img src="images/book-logo2.svg" alt="">
-                <p class="project-title"><span class="grey">Larakielcode</span><strong>Library</strong></p>
+                <a href="#"><img src="images/book-logo2.svg" alt=""></a>
+                <p class="project-title"><a href="#"><span class="grey">Larakielcode</span> <strong><span class="pastelpink">Library</span></strong></a></p>
             </div>
             <div class="header-nav">
                 <ul>
@@ -29,10 +30,6 @@
             </div>
         </header>
 
-        <nav>
-            <div>nav</div>
-        </nav>
-
         <main>
             <div>main content</div>
         </main>
@@ -41,6 +38,32 @@
             <div>footer here</div>
         </footer>
 
+    </div>
+
+    <div class="modal">
+        <p>Add book information</p>
+        <span class="close-x">x</span>
+        <form action="#">
+           <label for="book-title">
+            <p>Title</p>
+            <input type="text" name="book-title" id="book-title">
+           </label>
+           <label for="book-author">
+            <p>Author</p>
+            <input type="text" name="book-author" id="book-author">
+           </label>
+           <label for="book-year">
+            <p>Year</p>
+            <input type="number" name="book-year" id="book-year" min="1500" max="9999">
+           </label>
+           <label class="check-control" for="book-read">
+            <input type="checkbox" name="book-read" id="book-read"> I've already read it
+           </label>
+           <p>
+            <button type="button">Add Book</button>
+            <button type="button">Add Book</button>
+           </p>
+        </form>
     </div>
 
     <script src="js/booklibrary.js"></script>

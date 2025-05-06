@@ -3,6 +3,7 @@
 
     /* declare personal vars */
     --regular-fvs: "opsz" 20, "wght" 300;
+    --modal-form-fvs: "opsz" 20, "wght" 400;
     --bold-fvs: "opsz" 20, "wght" 800;
     --lgrey-clr: #ECECEC;
     --grey-clr: #8D8D8D;
@@ -10,6 +11,7 @@
     --white-clr: #FFFFFF;
     --pastel-pink: #FFC5D3;
     --regular-padding: 0.5rem 2rem;
+    --button-padding: 0.9rem 3rem;
 }
 
 @font-face {
@@ -30,5 +32,5 @@ p, div {
 
 strong {
     font-variation-settings: var(--bold-fvs);
-    letter-spacing: 2px;
+    letter-spacing: 0.1rem;
 }

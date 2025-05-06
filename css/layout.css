@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-areas: 
         "head head"
-        "nav content"
+        "content content"
         "foot foot"
     ;
     grid-template-columns: 300px 1fr;
@@ -34,17 +34,14 @@ header .header-nav ul {
     justify-content: flex-end;
 }
 
-nav {
-    grid-area: nav;
-    background-color: yellow;
-}
-
 main {
     grid-area: content;
     background-color: aqua;
+    padding: var(--regular-padding);
 }
 
 footer {
     grid-area: foot;
     background-color: blueviolet;
+    padding: var(--regular-padding);
 }
