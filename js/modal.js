@@ -1,7 +1,7 @@
 const closebtn = document.querySelector(".close-x");
-/* const closebtnlink = document.querySelector("#close-x-link"); */
 const modal = document.querySelector(".modal");
 const addbtn = document.querySelector("#addbook");
+const myForm = document.querySelector('#myform');
 
 closebtn.addEventListener('click', () => {
     modal.style.display = 'none';
@@ -18,5 +18,10 @@ window.addEventListener = ('click', function (e) {
 });
 
 function closeModal() {
+    myForm.reset();
     modal.style.display = 'none';
+}
+
+function resetFields() {
+    resetbtn.click();
 }

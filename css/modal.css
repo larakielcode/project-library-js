@@ -142,3 +142,7 @@ form input:not([type="checkbox"]) {
     text-align: center;
     color: var(--lgrey-clr);
 }
+
+#clear-fields {
+    display: none;
+}

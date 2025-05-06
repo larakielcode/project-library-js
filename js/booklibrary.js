@@ -26,7 +26,7 @@ function Book(title, author, pages, readStatus) {
     if (!new.target) { throw Error("You should use NEW in creating Book object"); }
     const bookid = '';
 
-    this.bookid = crypto.randomUUID(); // generate a unique id for the book
+    this.bookid = crypto.randomUUID(); // generate a unique id for the bookx
     this.title = title;
     this.author = author;
     this.pages = typeof pages === 'number' ? pages : 0;
