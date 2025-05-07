@@ -52,9 +52,9 @@ function Book(title, author, pages, readStatus) {
 
 Book.prototype.addBookToLibrary = function () {
   bookLibrary.push({
-    bookid: this.bookid,
-    title: this.title,
-    author: this.author,
+    bookid: this.bookid.toLowerCase(),
+    title: this.title.toLowerCase(),
+    author: this.author.toLowerCase(),
     pages: parseInt(this.pages),
     readStatus: this.readStatus,
   });
