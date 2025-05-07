@@ -146,3 +146,11 @@ form input:not([type="checkbox"]) {
 #clear-fields {
     display: none;
 }
+
+span.errorMessage {
+    padding: 1rem;
+    text-align: center;
+    color: red;
+    margin: 0 auto;
+    font-size: 0.8rem;
+}

@@ -1,22 +1,26 @@
 const bookLibrary = []; // this will store all the books
-
+const emptyFields = []; // this will store fields that are empty in validation
 const saveBookBtn = document.querySelector("#add-book-button");
+const bookTitle = document.querySelector('#book-title');
+const bookAuthor = document.querySelector('#book-author');
+const bookPages = document.querySelector('#book-pages');
+let isReadStatus = document.querySelector('#book-read');
 
 saveBookBtn.addEventListener('click', createBookEntry);
 
 function createBookEntry() {
 
-    const bookTitle = document.querySelector('#book-title');
-    const bookAuthor = document.querySelector('#book-author');
-    const bookPages = document.querySelector('#book-pages');
-    let isReadStatus = document.querySelector('#book-read');
+
 
     isReadStatus = (isReadStatus.checked) ? true : false;
 
 
     /* Start form validation */
-    if (bookTitle.value == '' || bookAuthor.value == '' || (bookPages.value == '' && typeof bookPages.value != 'number')) {
-        bookTitle.style.border = '0.15rem solid red';
+    if (formValidation() === false) {
+        for (const key in emptyFields) {
+            console.log(emptyFields[key]);
+            emptyFields[key].style.border = '0.15rem solid red';
+        }
     } else {
 
         // Initialize book
@@ -51,3 +55,25 @@ Book.prototype.addBookToLibrary = function () {
         readStatus: this.readStatus
     });
 }
+
+function formValidation() {
+
+    if (bookTitle.value == '') {
+        emptyFields.push(bookTitle);
+    } else {
+        bookTitle.style.border = 'none';
+    }
+    if (bookAuthor.value == '') {
+        emptyFields.push(bookAuthor);
+    }
+    if (bookPages.value == '') {
+        emptyFields.push(bookPages);
+    }
+
+    if (emptyFields.length > 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+

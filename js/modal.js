@@ -3,6 +3,7 @@ const modal = document.querySelector(".modal");
 const notice = document.querySelector(".notice");
 const addbtn = document.querySelector("#addbook");
 const myForm = document.querySelector('#myform');
+const errorDisplay = document.querySelector('.errorMessage');
 
 closebtn.onclick = function () {
     //modal.style.display = 'none';

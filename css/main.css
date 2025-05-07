@@ -57,8 +57,3 @@ header .project-logo img {
     color: var(--dgrey-clr);
 }
 
-.errorMessage {
-    margin-top: 2rem;
-    text-align: center;
-    color: red;
-}
