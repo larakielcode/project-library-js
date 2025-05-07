@@ -1,21 +1,23 @@
 const closebtn = document.querySelector(".close-x");
 const modal = document.querySelector(".modal");
+const notice = document.querySelector(".notice");
 const addbtn = document.querySelector("#addbook");
 const myForm = document.querySelector('#myform');
 
-closebtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+closebtn.onclick = function () {
+    //modal.style.display = 'none';
+    closeModal();
+};
 
-addbtn.addEventListener('click', function () {
+addbtn.onclick = function () {
     modal.style.display = "block";
-});
+};
 
-window.addEventListener = ('click', function (e) {
-    if (e.target == modal) {
-        modal.style.display = "none";
+window.onclick = function (e) {
+    if (e.target == modal || e.target == notice) {
+        closeModal();
     }
-});
+}
 
 function closeModal() {
     myForm.reset();
