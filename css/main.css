@@ -57,3 +57,14 @@ header .project-logo img {
     color: var(--dgrey-clr);
 }
 
+footer div {
+    text-align: center;
+    color: var(--dgrey-clr);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+}
+
+footer div a {
+    text-decoration: none;
+    color: var(--dgrey-clr);
+}

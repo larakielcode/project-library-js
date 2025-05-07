@@ -41,6 +41,6 @@ main {
 
 footer {
     grid-area: foot;
-    background-color: blueviolet;
     padding: var(--regular-padding);
+    background-color: var(--white-clr);
 }
