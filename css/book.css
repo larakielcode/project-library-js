@@ -1,7 +1,9 @@
 .main-container {
+    padding: 1rem 0;
+    box-sizing: border-box;
     display: grid;
     gap: 1rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
     grid-auto-rows: auto;
 }
