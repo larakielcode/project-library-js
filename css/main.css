@@ -56,3 +56,9 @@ header .project-logo img {
     text-decoration: none;
     color: var(--dgrey-clr);
 }
+
+.errorMessage {
+    margin-top: 2rem;
+    text-align: center;
+    color: red;
+}

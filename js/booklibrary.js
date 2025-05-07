@@ -6,27 +6,27 @@ saveBookBtn.addEventListener('click', createBookEntry);
 
 function createBookEntry() {
 
-    const bookTitle = document.querySelector('#book-title').value;
-    const bookAuthor = document.querySelector('#book-author').value;
-    const bookPages = document.querySelector('#book-pages').value;
+    const bookTitle = document.querySelector('#book-title');
+    const bookAuthor = document.querySelector('#book-author');
+    const bookPages = document.querySelector('#book-pages');
     let isReadStatus = document.querySelector('#book-read');
 
     isReadStatus = (isReadStatus.checked) ? true : false;
 
 
-    /* 
-    
-    Need to add a validation script here for blank entries
+    /* Start form validation */
+    if (bookTitle.value == '' || bookAuthor.value == '' || (bookPages.value == '' && typeof bookPages.value != 'number')) {
+        bookTitle.style.border = '0.15rem solid red';
+    } else {
 
-    */
+        // Initialize book
+        const newBookEntry = new Book(bookTitle.value, bookAuthor.value, parseInt(bookPages.value), isReadStatus);
 
-
-    // Initialize book
-    const newBookEntry = new Book(bookTitle, bookAuthor, parseInt(bookPages), isReadStatus);
-
-    newBookEntry.addBookToLibrary(); // create the book and save to the array
-    console.table(bookLibrary);
-    closeModal();
+        newBookEntry.addBookToLibrary(); // create the book and save to the array
+        /* console.clear(); */
+        console.table(bookLibrary);
+        closeModal();
+    }
 
 }
 
