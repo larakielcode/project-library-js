@@ -1,0 +1,14 @@
+.main-container {
+    display: grid;
+    gap: 1rem;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+    grid-auto-rows: auto;
+}
+
+.book-entry-container {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: yellow;
+    padding: 1rem 1rem;
+}
