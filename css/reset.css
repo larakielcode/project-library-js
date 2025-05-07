@@ -4,12 +4,14 @@
     /* declare personal vars */
     --regular-fvs: "opsz" 20, "wght" 300;
     --modal-form-fvs: "opsz" 20, "wght" 400;
+    --author-form-fvs: "opsz" 20, "wght" 500;
     --bold-fvs: "opsz" 20, "wght" 800;
     --lgrey-clr: #ECECEC;
     --grey-clr: #8D8D8D;
     --dgrey-clr: #666666;
     --white-clr: #FFFFFF;
     --pastel-pink: #FFC5D3;
+    --dark-pink: #e96180;
     --regular-padding: 0.5rem 2rem;
     --button-padding: 0.9rem 3rem;
     --buttonh-padding: 0.7rem 2rem;
