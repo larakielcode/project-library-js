@@ -3,7 +3,7 @@
     box-sizing: border-box;
     display: grid;
     gap: 1rem;
-    justify-content: space-between;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
     grid-auto-rows: auto;
 }
@@ -47,4 +47,5 @@
     text-shadow: 1px 1px 3px rgb(255, 255, 255, 1);
     font-size: 1rem;
     color: var(--dark-pink);
+    text-transform: capitalize;
 }

@@ -1,90 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/book.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/book.css" />
     <title>Project : Library | Larakielcode</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- Start the layout -->
     <div class="wrapper">
+      <header>
+        <div class="project-logo">
+          <a href="#"><img src="images/book-logo2.svg" alt="" /></a>
+          <p class="project-title">
+            <a href="#"
+              ><span class="grey">Larakielcode</span>
+              <strong><span class="pastelpink">Library</span></strong></a
+            >
+          </p>
+        </div>
+        <div class="header-nav">
+          <ul>
+            <li>
+              <button id="addbook">
+                <strong>[ + ]</strong> Book to Library
+              </button>
+            </li>
+          </ul>
+        </div>
+      </header>
 
-        <header>
-            <div class="project-logo">
-                <a href="#"><img src="images/book-logo2.svg" alt=""></a>
-                <p class="project-title"><a href="#"><span class="grey">Larakielcode</span> <strong><span
-                                class="pastelpink">Library</span></strong></a></p>
-            </div>
-            <div class="header-nav">
-                <ul>
-                    <li><button id="addbook"><strong>[ + ]</strong> Book to Library</button></li>
-                </ul>
-            </div>
-        </header>
-
-        <main>
-            <div class="main-container">
-                
-                <!-- <div class="book-entry-container">
+      <main>
+        <div class="main-container">
+          <!-- <div class="book-entry-container">
                     <p>Book Title</p>
                     <p>Published: 2025</p>
                     <p>Book Author</p>
                 </div> -->
+        </div>
+      </main>
 
-            </div>
-        </main>
-
-        <footer>
-            <div>footer here</div>
-        </footer>
-
+      <footer>
+        <div>footer here</div>
+      </footer>
     </div>
 
     <div class="modal">
-        <div class="modal-content">
-            <p>Add book information</p>
-            <span class="close-x">x</span>
+      <div class="modal-content">
+        <p>Add book information</p>
+        <span class="close-x">x</span>
 
-            <form onsubmit="event.preventDefault();" id="myform">
-                <label for=" book-title">
-                    <p>Title <span class="require">*</span></p>
-                    <input type="text" name="book-title" id="book-title" required>
-                </label>
-                <label for="book-author">
-                    <p>Author <span class="require">*</span></p>
-                    <input type="text" name="book-author" id="book-author" required>
-                </label>
-                <label for="book-pages">
-                    <p>Pages <span class="require">*</span></p>
-                    <input type="number" name="book-pages" id="book-pages" min="1" max="99999999" required>
-                </label>
-                <label class="check-control" for="book-read">
-                    <input type="checkbox" name="book-read" id="book-read"> I've already read it
-                </label>
-                <p>
-                    <button type="button" id="add-book-button">Add Book</button>
-                    <!-- <span id="close-x-link"><a href="">Close this box</a></span> -->
-                    <button type="reset" id="clear-fields">Reset fields</button>
-                </p>
-            </form>
-            <span class="errorMessage">All text fields (*) are required.</span>
-        </div>
-        <div class="notice">Click anywhere the screen to close</div>
+        <form onsubmit="event.preventDefault();" id="myform">
+          <label for=" book-title">
+            <p>Title <span class="require">*</span></p>
+            <input type="text" name="book-title" id="book-title" required />
+          </label>
+          <label for="book-author">
+            <p>Author <span class="require">*</span></p>
+            <input type="text" name="book-author" id="book-author" required />
+          </label>
+          <label for="book-pages">
+            <p>Pages <span class="require">*</span></p>
+            <input
+              type="number"
+              name="book-pages"
+              id="book-pages"
+              min="1"
+              max="99999999"
+              required
+            />
+          </label>
+          <label class="check-control" for="book-read">
+            <input type="checkbox" name="book-read" id="book-read" /> I've
+            already read it
+          </label>
+          <p>
+            <button type="button" id="add-book-button">Add Book</button>
+            <!-- <span id="close-x-link"><a href="">Close this box</a></span> -->
+            <button type="reset" id="clear-fields">Reset fields</button>
+          </p>
+        </form>
+        <span class="errorMessage">All text fields (*) are required.</span>
+      </div>
+      <div class="notice">Click anywhere the screen to close</div>
     </div>
 
+    <script src="js/displayBook.js"></script>
     <script src="js/booklibrary.js"></script>
     <script src="js/modal.js"></script>
-    <script src="js/displayBook.js"></script>
-</body>
-
-
-
+  </body>
 </html>
