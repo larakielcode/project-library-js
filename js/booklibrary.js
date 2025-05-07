@@ -116,7 +116,7 @@ function displayBook() {
     bookDivContainer.appendChild(bookAuthorPara);
     for (const key in bookLibrary) {
       bookTitlePara.textContent = bookLibrary[key].title;
-      bookPagesPara.textContent = `${bookLibrary[key].pages} pages`;
+      bookPagesPara.textContent = bookLibrary[key].pages;
       bookAuthorPara.textContent = bookLibrary[key].author;
       //bookTitlePara.textContent = bookLibrary[key].title;
 

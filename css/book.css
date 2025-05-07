@@ -18,34 +18,41 @@
 
 .book-entry-container p:first-child {
     font-size: 1.2rem;
-    font-variation-settings: var(--bold-fvs);
     color: var(--dgrey-clr);
-    padding: 1rem 0 0 0;
+    padding: 1rem 0 0.5rem 0;
     /* border-bottom: 1px dashed var(--dgrey-clr); */
     text-transform: capitalize;
-}
-
-.book-entry-container p:first-child::after {
-    content: '';
-    display: block;
-    width: 100%;
-    margin: 1rem 0 0.5rem 0;
-    height: 0.1rem;
-    background-color: var(--dark-pink);
+    border-bottom: 0.1rem solid var(--dark-pink);
 }
 
 .book-entry-container p:nth-child(2) {
     color: var(--dgrey-clr);
     font-size: 0.9rem;
     font-style: italic;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
+}
+
+.book-entry-container p:nth-child(2)::after {
+    content: ' - pages';
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--dgrey-clr);
+    letter-spacing: 0.08rem;
 }
 
 .book-entry-container p:nth-child(3) {
-    font-variation-settings: var(--author-form-fvs);
     color: var(--dgrey-clr);
     text-shadow: 1px 1px 3px rgb(255, 255, 255, 1);
     font-size: 1rem;
     color: var(--dark-pink);
     text-transform: capitalize;
+    text-align: right;
+}
+
+.book-entry-container p:nth-child(3)::after {
+    content: ' - Author';
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--dgrey-clr);
+    letter-spacing: 0.08rem;
 }
