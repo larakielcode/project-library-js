@@ -9,29 +9,24 @@ let isReadStatus = document.querySelector('#book-read');
 saveBookBtn.addEventListener('click', createBookEntry);
 
 function createBookEntry() {
-
-
-
-    isReadStatus = (isReadStatus.checked) ? true : false;
-
-
     /* Start form validation */
-    if (formValidation() === false) {
-        for (const key in emptyFields) {
-            console.log(emptyFields[key]);
-            emptyFields[key].style.border = '0.15rem solid red';
-        }
+    let validate = formValidation();
+
+    if (validate === false) {
+        errorDisplay.style.display = 'block';
+        console.dir(emptyFields);
     } else {
 
+        isReadStatus = (isReadStatus.checked) ? true : false;
         // Initialize book
         const newBookEntry = new Book(bookTitle.value, bookAuthor.value, parseInt(bookPages.value), isReadStatus);
 
         newBookEntry.addBookToLibrary(); // create the book and save to the array
         /* console.clear(); */
         console.table(bookLibrary);
+        console.table(emptyFields);
         closeModal();
     }
-
 }
 
 // create the book construction
@@ -57,19 +52,42 @@ Book.prototype.addBookToLibrary = function () {
 }
 
 function formValidation() {
+    let index;
 
     if (bookTitle.value == '') {
-        emptyFields.push(bookTitle);
+        if (!emptyFields.includes(bookTitle)) {
+            emptyFields.push(bookTitle);
+        }
     } else {
-        bookTitle.style.border = 'none';
+        index = emptyFields.indexOf(bookTitle);
+        console.log(index);
+        if (index > -1) {
+            emptyFields.splice(index, 1);
+        }
     }
     if (bookAuthor.value == '') {
-        emptyFields.push(bookAuthor);
+        if (!emptyFields.includes(bookAuthor)) {
+            emptyFields.push(bookAuthor);
+        }
+    } else {
+        index = emptyFields.indexOf(bookAuthor);
+        console.log(index);
+        if (index > -1) {
+            emptyFields.splice(index, 1);
+        }
     }
     if (bookPages.value == '') {
-        emptyFields.push(bookPages);
+        if (!emptyFields.includes(bookPages)) {
+            emptyFields.push(bookPages);
+        }
+    } else {
+        index = emptyFields.indexOf(bookPages);
+        console.log(index);
+        if (index > -1) {
+            emptyFields.splice(index, 1);
+        }
     }
-
+    console.log('length of emptyfields ' + emptyFields.length)
     if (emptyFields.length > 0) {
         return false;
     } else {

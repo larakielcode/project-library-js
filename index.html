@@ -46,15 +46,15 @@
 
             <form onsubmit="event.preventDefault();" id="myform">
                 <label for=" book-title">
-                    <p>Title</p>
+                    <p>Title <span class="require">*</span></p>
                     <input type="text" name="book-title" id="book-title" required>
                 </label>
                 <label for="book-author">
-                    <p>Author</p>
+                    <p>Author <span class="require">*</span></p>
                     <input type="text" name="book-author" id="book-author" required>
                 </label>
                 <label for="book-pages">
-                    <p>Pages</p>
+                    <p>Pages <span class="require">*</span></p>
                     <input type="number" name="book-pages" id="book-pages" min="1" max="99999999" required>
                 </label>
                 <label class="check-control" for="book-read">
@@ -66,7 +66,7 @@
                     <button type="reset" id="clear-fields">Reset fields</button>
                 </p>
             </form>
-            <span class="errorMessage"></span>
+            <span class="errorMessage">All text fields (*) are required.</span>
         </div>
         <div class="notice">Click anywhere the screen to close</div>
     </div>

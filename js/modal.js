@@ -23,6 +23,8 @@ window.onclick = function (e) {
 function closeModal() {
     myForm.reset();
     modal.style.display = 'none';
+    errorDisplay.style.display = 'none';
+    
 }
 
 function resetFields() {
