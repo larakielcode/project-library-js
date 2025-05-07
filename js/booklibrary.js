@@ -13,12 +13,21 @@ function createBookEntry() {
 
     isReadStatus = (isReadStatus.checked) ? true : false;
 
+
+    /* 
+    
+    Need to add a validation script here for blank entries
+
+    */
+
+
     // Initialize book
     const newBookEntry = new Book(bookTitle, bookAuthor, parseInt(bookPages), isReadStatus);
 
     newBookEntry.addBookToLibrary(); // create the book and save to the array
     console.table(bookLibrary);
     closeModal();
+
 }
 
 // create the book construction
