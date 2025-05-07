@@ -19,7 +19,7 @@
 .book-entry-container p:first-child {
     font-size: 1.2rem;
     color: var(--dgrey-clr);
-    padding: 1rem 0 0.5rem 0;
+    padding: 2rem 0 1rem 0;
     /* border-bottom: 1px dashed var(--dgrey-clr); */
     text-transform: capitalize;
     border-bottom: 0.1rem solid var(--dark-pink);
@@ -55,4 +55,19 @@
     font-style: italic;
     color: var(--dgrey-clr);
     letter-spacing: 0.08rem;
+}
+
+.book-entry-container p:last-child {
+    padding: 2rem 0 0.5rem 0;
+    display: flex;
+}
+
+.book-entry-container p:last-child button {
+    padding: 0.5rem 3rem;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    color: var(--pastel-pink);
+    background-color: var(--dark-pink);
 }
