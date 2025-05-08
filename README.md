@@ -1,3 +1,3 @@
 # project-library-js
 
-This repository is created in regards to the odin project | the library.
+This branch is solely to release the very basic library no storage app in regards to the odin project.
