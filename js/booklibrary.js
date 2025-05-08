@@ -133,12 +133,10 @@ function displayBook() {
       
     }
   } else {
-    console.log("No data yet");
+    
   }
-
   
 const allButtons = document.querySelectorAll('#readStatusButton');
-console.log(allButtons);
 
 allButtons.forEach(btns => btns.addEventListener('click', setButtonStatus));
 
@@ -159,7 +157,6 @@ function setButtonStatus() {
       }
     } 
   }
-  console.log(bookLibrary);
 }
 
 function setClassBtn (status) {
