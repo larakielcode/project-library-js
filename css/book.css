@@ -14,6 +14,8 @@
     background-color: var(--pastel-pink);
     padding: 0.5rem 1rem 1rem 1rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .book-entry-container p:first-child {
@@ -23,6 +25,7 @@
     /* border-bottom: 1px dashed var(--dgrey-clr); */
     text-transform: capitalize;
     border-bottom: 0.1rem solid var(--dark-pink);
+    flex: 1 0 0px;
 }
 
 .book-entry-container p:nth-child(2) {
@@ -62,12 +65,34 @@
     display: flex;
 }
 
-.book-entry-container p:last-child button {
+.book-entry-container .readbtn {
     padding: 0.5rem 3rem;
     font-size: 0.8rem;
     border: none;
     border-radius: 0.5rem;
     text-transform: uppercase;
+    color: var(--pastel-pink);
+    background-color: var(--dark-pink);
+    cursor: pointer;
+}
+
+.book-entry-container .unreadbtn {
+    padding: 0.5rem 3rem;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    color: var(--dgrey-clr);
+    background-color: var(--lgrey-clr);
+    cursor: pointer;
+}
+
+.book-entry-container .readbtn:hover {
+    background-color: var(--lgrey-clr);
+    color: var(--dgrey-clr);
+}
+
+.book-entry-container .unreadbtn:hover {
     color: var(--pastel-pink);
     background-color: var(--dark-pink);
 }

@@ -102,30 +102,45 @@ function formValidation() {
 }
 
 function displayBook() {
-
   const bookDivContainer = document.createElement("div");
   const bookTitlePara = document.createElement("p");
   const bookPagesPara = document.createElement("p");
   const bookAuthorPara = document.createElement("p");
+  const readStatusContainer = document.createElement("p");
+  const readStatusBtn = document.createElement("button");
 
   if (bookLibrary.length > 0) {
+
     mainContainer.appendChild(bookDivContainer);
-    bookDivContainer.classList.add('book-entry-container');
+    bookDivContainer.classList.add("book-entry-container");
     bookDivContainer.appendChild(bookTitlePara);
     bookDivContainer.appendChild(bookPagesPara);
     bookDivContainer.appendChild(bookAuthorPara);
+    bookDivContainer.appendChild(readStatusContainer);
+    readStatusContainer.appendChild(readStatusBtn);
+    readStatusBtn.setAttribute('type', 'button');
+
     for (const key in bookLibrary) {
       bookTitlePara.textContent = bookLibrary[key].title;
       bookPagesPara.textContent = bookLibrary[key].pages;
       bookAuthorPara.textContent = bookLibrary[key].author;
-      //bookTitlePara.textContent = bookLibrary[key].title;
-
-      //console.log(bookLibrary[key].title);
-      //console.log(bookLibrary[key].pages);
-      //console.log(bookLibrary[key].author);
-      //console.log(bookLibrary[key].readStatus);
+      readStatusBtn.setAttribute('data-id',bookLibrary[key].bookid);
+      let classbtn = setClassBtn(bookLibrary[key].readStatus);
+      readStatusBtn.setAttribute('class',classbtn);
+      classbtn = (classbtn == 'readbtn') ? 'read' : 'unread';
+      readStatusBtn.innerHTML = classbtn;
+      console.log(typeof classbtn);
+      console.log(typeof bookLibrary[key].readStatus);
+      console.log(bookLibrary[key]);
     }
   } else {
     console.log("No data yet");
   }
+}
+
+Book.prototype.setButtonStatus = function (status) {
+  return status = (status === true) ? 'readbtn' : 'unreadbtn';
+}
+function setClassBtn (status) {
+  return status = (status === true) ? 'readbtn' : 'unreadbtn';
 }
