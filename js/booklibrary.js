@@ -125,22 +125,43 @@ function displayBook() {
       bookPagesPara.textContent = bookLibrary[key].pages;
       bookAuthorPara.textContent = bookLibrary[key].author;
       readStatusBtn.setAttribute('data-id',bookLibrary[key].bookid);
+      readStatusBtn.setAttribute('id', 'readStatusButton');
       let classbtn = setClassBtn(bookLibrary[key].readStatus);
       readStatusBtn.setAttribute('class',classbtn);
       classbtn = (classbtn == 'readbtn') ? 'read' : 'unread';
       readStatusBtn.innerHTML = classbtn;
-      console.log(typeof classbtn);
-      console.log(typeof bookLibrary[key].readStatus);
-      console.log(bookLibrary[key]);
+      
     }
   } else {
     console.log("No data yet");
   }
+
+  
+const allButtons = document.querySelectorAll('#readStatusButton');
+console.log(allButtons);
+
+allButtons.forEach(btns => btns.addEventListener('click', setButtonStatus));
+
 }
 
-Book.prototype.setButtonStatus = function (status) {
-  return status = (status === true) ? 'readbtn' : 'unreadbtn';
+function setButtonStatus() {
+
+  for (const key in bookLibrary) {
+     if (bookLibrary[key].bookid.includes(this.dataset.id)) {
+      if (this.className == 'readbtn') {
+        bookLibrary[key].readStatus = false;
+        this.className = 'unreadbtn';
+        this.innerHTML = 'unread';
+      } else {
+        bookLibrary[key].readStatus = true;
+        this.className = 'readbtn';
+        this.innerHTML = 'read';
+      }
+    } 
+  }
+  console.log(bookLibrary);
 }
+
 function setClassBtn (status) {
   return status = (status === true) ? 'readbtn' : 'unreadbtn';
 }
