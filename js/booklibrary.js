@@ -19,6 +19,17 @@ class Books {
     return `bookId:${this.bookId},title:${this.title},author:${this.author},pages:${this.pages},hasRead:${this.hasRead}`;
   }
 
+  removeEntry() {
+    const bookIdToRemove = this.dataset.bookId;
+    const index = bookShelf.findIndex(book => book.bookId === bookIdToRemove);
+
+    if (index !== -1) {
+      bookShelf.splice(index, 1);
+      displayBooks();
+    }
+
+  }
+
 }
 
 function displayBooks() {
@@ -56,6 +67,13 @@ function displayBooks() {
     bookDivContainer.appendChild(bookHasRead);
     bookHasRead.appendChild(readStatusBtn);
 
+    // Add a remove button
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove book';
+    removeButton.classList.add('remove-btn');
+    bookHasRead.appendChild(removeButton);
+    removeButton.setAttribute('data-book-id', book.bookId);
+    removeButton.addEventListener('click', book.removeEntry);
   });
 }
 

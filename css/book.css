@@ -4,7 +4,7 @@
     display: grid;
     gap: 1rem;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 370px));
     grid-auto-rows: auto;
 }
 
@@ -25,7 +25,7 @@
     /* border-bottom: 1px dashed var(--dgrey-clr); */
     text-transform: capitalize;
     border-bottom: 0.1rem solid var(--dark-pink);
-    flex: 1 0 0px;
+    flex: 1 0 0;
 }
 
 .book-entry-container p:nth-child(2) {
@@ -60,9 +60,14 @@
     letter-spacing: 0.08rem;
 }
 
-.book-entry-container p:last-child {
-    padding: 2rem 0 0.5rem 0;
+.book-entry-container div {
+    padding: 1rem;
     display: flex;
+    gap: 1rem;
+}
+
+.book-entry-container div>* {
+    padding: 0.7rem 1rem;
 }
 
 .book-entry-container .readbtn {
@@ -99,4 +104,20 @@
 
 .book-entry-container div {
     margin-top: 2rem;
+}
+
+.remove-btn {
+    padding: 0.5rem 3rem;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    color: var(--pastel-pink);
+    background-color: var(--dgrey-clr);
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: var(--lgrey-clr);
+    color: var(--dgrey-clr);
 }
