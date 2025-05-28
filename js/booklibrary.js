@@ -23,34 +23,40 @@ class Books {
 
 function displayBooks() {
   const mainContainer = document.querySelector('.main-container');
-  const bookDivContainer = document.createElement('div');
-  const bookTitle = document.createElement('p');
-  const bookAuthor = document.createElement('p');
-  const bookPages = document.createElement('p');
-  const bookHasRead = document.createElement('p');
-  const readStatusBtn = document.createElement('button');
 
-  mainContainer.appendChild(bookDivContainer);
-  bookDivContainer.classList.add('book-entry-container');
-  bookDivContainer.appendChild(bookTitle);
-  bookDivContainer.appendChild(bookPages);
-  bookDivContainer.appendChild(bookAuthor);
-  bookDivContainer.appendChild(bookHasRead);
-  bookHasRead.appendChild(readStatusBtn);
+  // clear the container
+  mainContainer.innerHTML = '';
 
-  for (const key in bookShelf) {
-    bookTitle.textContent = bookShelf[key]['title'];
-    bookAuthor.textContent = bookShelf[key]['author'];
-    bookPages.textContent = bookShelf[key]['pages'];
-    let classbtn = (bookShelf[key]['hasRead'] == true) ? 'readbtn' : 'unreadbtn';
+  bookShelf.forEach(book => {
+    const bookDivContainer = document.createElement('div');
+    const bookTitle = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    const bookPages = document.createElement('p');
+    const bookHasRead = document.createElement('div');
+    const readStatusBtn = document.createElement('button');
+
+    mainContainer.appendChild(bookDivContainer);
+    bookDivContainer.classList.add('book-entry-container');
+
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = book.author;
+    bookPages.textContent = book.pages;
+
+    let classbtn = (book.hasRead === true) ? 'readbtn' : 'unreadbtn';
     readStatusBtn.setAttribute('class', classbtn);
     readStatusBtn.setAttribute('id', 'readStatusButton');
-    readStatusBtn.setAttribute('data-book-id', bookShelf[key]['bookId']);
-    (classbtn == 'readbtn') ? readStatusBtn.textContent = 'read' : readStatusBtn.textContent = 'unread';
-  }
+    readStatusBtn.setAttribute('data-book-id', book.bookId);
+    readStatusBtn.textContent = (book.hasRead === true) ? 'Read' : 'Unread';
 
-  const allButtons = document.querySelectorAll('#readStatusButton');
-  allButtons.forEach(btns => btns.addEventListener('click', setButtonStatus));
+    readStatusBtn.addEventListener('click', setButtonStatus);
+
+    bookDivContainer.appendChild(bookTitle);
+    bookDivContainer.appendChild(bookPages);
+    bookDivContainer.appendChild(bookAuthor);
+    bookDivContainer.appendChild(bookHasRead);
+    bookHasRead.appendChild(readStatusBtn);
+
+  });
 }
 
 function setButtonStatus() {
@@ -75,16 +81,40 @@ function start() {
 
   const addbook = document.querySelector('#add-book-button');
 
-  addbook.onclick = () => {
+  addbook.addEventListener('click', () => {
     const myForm = document.querySelector('form');
-    const child = myForm.childNodes;
+    const titleInput = document.querySelector('#book-title');
+    const authorInput = document.querySelector('#book-author');
+    const pagesInput = document.querySelector('#book-pages');
+    const hasReadInput = document.querySelector('#book-read');
 
-    for (const element of child) {
-      console.log(element);
+    const validationResult = formValidate(titleInput, authorInput, pagesInput)
+    if (validationResult) {
+      console.log('alright')
     }
+  });
+}
 
+function formValidate(...args) {
+  const errMsg = document.querySelector('.errorMessage');
+  let isFormValid = true;
+  args.forEach(input => {
+    if (input.value.trim() === '') {
+      isFormValid = false;
+    }
+  });
+
+  if (!isFormValid) {
+    errMsg.style.display = 'block';
   }
 
+  return isFormValid;
+
 }
+/* 
+const book = new Books('The Dummy Title', 'Aldin Moreno', '333', false);
+const book1 = new Books('The Quick Brown Fox Jumps Over Dog', 'Aldin Moreno', '333', false);
+book.addBookToShelf();
+book1.addBookToShelf(); */
 
 start();

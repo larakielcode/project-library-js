@@ -96,3 +96,7 @@
     color: var(--pastel-pink);
     background-color: var(--dark-pink);
 }
+
+.book-entry-container div {
+    margin-top: 2rem;
+}
