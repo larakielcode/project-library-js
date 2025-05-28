@@ -53,18 +53,6 @@ function displayBooks() {
   allButtons.forEach(btns => btns.addEventListener('click', setButtonStatus));
 }
 
-const book = new Books('test books', 'aldin moreno', '333', false);
-const book1 = new Books('dummies book', 'zeke moreno', '143', true);
-const book2 = new Books('ambot book', 'lotlot moreno', '22', false);
-book.addBookToShelf();
-book1.addBookToShelf();
-book2.addBookToShelf();
-/* console.log("\n--- Current Books on Shelf ---");
-bookShelf.forEach((book, index) => {
-  console.log(`${index + 1}. ${book.getBookInfo()}`);
-}); */
-
-
 function setButtonStatus() {
 
   for (const key in bookShelf) {
@@ -81,5 +69,22 @@ function setButtonStatus() {
       }
     }
   }
+}
+
+function start() {
+
+  const addbook = document.querySelector('#add-book-button');
+
+  addbook.onclick = () => {
+    const myForm = document.querySelector('form');
+    const child = myForm.childNodes;
+
+    for (const element of child) {
+      console.log(element);
+    }
+
+  }
 
 }
+
+start();
