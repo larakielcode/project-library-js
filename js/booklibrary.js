@@ -81,9 +81,9 @@ function setButtonStatus() {
 
   for (const key in bookShelf) {
     if (bookShelf[key].bookId.includes(this.dataset.bookId)) {
-      console.log(bookShelf[key]);
+
       (bookShelf[key]['hasRead'] === false) ? bookShelf[key]['hasRead'] = true : bookShelf[key]['hasRead'] = false;
-      console.log(bookShelf[key]);
+
       if (this.className == 'unreadbtn') {
         this.className = 'readbtn';
         this.textContent = 'read';
@@ -91,6 +91,7 @@ function setButtonStatus() {
         this.className = 'unreadbtn';
         this.textContent = 'unread';
       }
+
     }
   }
 }
@@ -144,10 +145,5 @@ function formValidate(...args) {
   return isFormValid;
 
 }
-/* 
-const book = new Books('The Dummy Title', 'Aldin Moreno', '333', false);
-const book1 = new Books('The Quick Brown Fox Jumps Over Dog', 'Aldin Moreno', '333', false);
-book.addBookToShelf();
-book1.addBookToShelf(); */
 
 start();
