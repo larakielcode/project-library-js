@@ -90,8 +90,23 @@ function start() {
 
     const validationResult = formValidate(titleInput, authorInput, pagesInput)
     if (validationResult) {
-      console.log('alright')
+      const newBook = new Books(
+        titleInput.value,
+        authorInput.value,
+        pagesInput.value,
+        hasReadInput.checked
+      );
+      newBook.addBookToShelf();
+
+      //clear the fields
+      titleInput.value = '';
+      authorInput.value = '';
+      pagesInput.value = '';
+      hasReadInput.checked = false;
     }
+
+    closeModal();
+
   });
 }
 
